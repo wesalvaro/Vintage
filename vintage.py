@@ -927,7 +927,7 @@ class PasteFromRegisterCommand(sublime_plugin.TextCommand):
                 self.view.erase(edit, sublime.Region(s.begin() + num,
                     s.end() + num))
                 num -= s.size()
-                new_sel.append(s.begin())
+                new_sel.append(s.begin() + len(text) - 1)
 
             offset += num
 
